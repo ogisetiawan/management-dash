@@ -50,3 +50,4 @@
 </form>
 <!--end::Form-->
 @endsection
+<script src="{{ asset('public/assets/js/custom/authentication/sign-in/general.js') }}"></script>

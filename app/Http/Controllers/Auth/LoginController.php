@@ -16,6 +16,10 @@ class LoginController extends Controller
         return view('login/reset-password');
     }
 
+    public function checkMail(){
+        return view('login/check-mail');
+    }
+
     public function newPasswordForm(){
         return view('login/new-password');
     }

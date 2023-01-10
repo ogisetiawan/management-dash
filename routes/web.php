@@ -42,3 +42,4 @@ Route::get('config-cache', function () {
 Route::get('/', [LoginController::class, 'loginForm']);
 Route::get('/password/reset', [LoginController::class, 'resetPasswordForm']);
 Route::get('/password/new', [LoginController::class, 'newPasswordForm']);
+Route::get('/check/mail', [LoginController::class, 'checkMail']);
