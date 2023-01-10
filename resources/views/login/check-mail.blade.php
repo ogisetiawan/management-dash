@@ -22,7 +22,7 @@
         </div>
     </div> --}}
 
-    <div class="d-flex align-items-center">
+    <div class="d-flex align-items-center mb-5">
         <div class="flex-shrink-0 ">
             <lottie-player style="height: 125px; width: 125px;" src="{{ url('public/assets/media/svg/mail-lottie.json') }}" background="transparent" speed="1" loop autoplay></lottie-player>
             <!-- <lottie-player style="height: 125px; width: 125px;" src="https://assets8.lottiefiles.com/packages/lf20_gylol8jm.json" background="transparent" speed="1" loop autoplay></lottie-player> -->
@@ -47,6 +47,11 @@
         </button>
     </div>
     <!--end::Submit button-->
+
+    <div class="fs-6 mt-5">
+        <span class="fw-semibold text-gray-500">Did not receive the email?</span>
+        <p><a href="#" class="link-primary fw-bold">Resend password recovery</a></p>
+    </div>
 </form>
 <!--end::Form-->
 @endsection
