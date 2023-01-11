@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Admin\MasterController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,7 +40,11 @@ Route::get('config-cache', function () {
     return '<h1>Config cache cleared</h1>';
 });
 
+//@ Login
 Route::get('/', [LoginController::class, 'loginForm']);
 Route::get('/password/reset', [LoginController::class, 'resetPasswordForm']);
 Route::get('/password/new', [LoginController::class, 'newPasswordForm']);
 Route::get('/check/mail', [LoginController::class, 'checkMail']);
+
+//@ Admin
+Route::get('/admin', [MasterController::class, 'index']);
