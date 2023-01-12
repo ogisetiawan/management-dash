@@ -3,9 +3,9 @@
 <!--begin::Form-->
 <form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" data-kt-redirect-url="../../demo20/dist/index.html" action="#">
     <!--begin::Heading-->
-    <div class="text-center mb-11">
+    <div class="text-center mb-5">
         <!--begin::Title-->
-        <h1 class="text-dark fw-bolder mb-3 text-uppercase text-start">Management Dashboard</h1>
+        <h1 class="text-dark fw-bolder mb-5 text-uppercase text-start">Management Dashboard</h1>
         <!--end::Title-->
         <!--begin::Subtitle-->
         <div class="text-gray-500 fw-semibold fs-6 text-uppercase text-start">Login to view Dashboard</div>
@@ -36,18 +36,15 @@
     <!--begin::Submit button-->
     <div class="d-grid mb-10">
         <button type="submit" id="kt_sign_in_submit" class="btn btn-primary">
-            <!--begin::Indicator label-->
-            <span class="indicator-label">Login</span>
-            <!--end::Indicator label-->
-            <!--begin::Indicator progress-->
+            <span class="indicator-label">LOGIN <i class="fa fa-arrow-right-to-bracket fs-3"></i></span>
             <span class="indicator-progress">Please wait...
                 <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
             </span>
-            <!--end::Indicator progress-->
         </button>
     </div>
+    <!-- <a href="#" class="btn btn-link btn-color-gray-600 btn-active-color-primary me-5 mb-2 text-end float-end">LOGIN &nbsp;&nbsp; <i class="fa fa-arrow-right-to-bracket fs-2 text-primary"></i></a> -->
     <!--end::Submit button-->
 </form>
 <!--end::Form-->
 @endsection
-<script src="{{ asset('public/assets/js/custom/authentication/sign-in/general.js') }}"></script>
+<!-- <script src="{{ asset('public/assets/js/custom/authentication/sign-in/general.js') }}"></script> -->
