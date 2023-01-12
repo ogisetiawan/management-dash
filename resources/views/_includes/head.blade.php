@@ -8,3 +8,24 @@
 <link href="{{ asset('public/assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('public/assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('public/_custom/css/font.css') }}" rel="stylesheet" type="text/css" />
+<!--begin::Theme mode setup on page load-->
+<script>
+    let defaultThemeMode = "light";
+    let themeMode;
+    if (document.documentElement) {
+        if (document.documentElement.hasAttribute("data-theme-mode")) {
+            themeMode = document.documentElement.getAttribute("data-theme-mode");
+        } else {
+            if (localStorage.getItem("data-theme") !== null) {
+                themeMode = localStorage.getItem("data-theme");
+            } else {
+                themeMode = defaultThemeMode;
+            }
+        }
+        if (themeMode === "system") {
+            themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", themeMode);
+    }
+</script>
+<!--end::Theme mode setup on page load-->

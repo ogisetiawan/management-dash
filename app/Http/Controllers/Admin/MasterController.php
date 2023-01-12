@@ -15,7 +15,7 @@ class MasterController extends Controller
     public function index()
     {
         //
-        return view('admin/index');
+        return view('master_data/country');
     }
 
     /**

@@ -1,4 +1,4 @@
-@extends('admin/layouts.default')
+@extends('_layouts.default')
 @section('content')
 <!--begin::Toolbar-->
 <div class="toolbar mb-n1 pt-3 mb-lg-n3 pt-lg-6" id="kt_toolbar">

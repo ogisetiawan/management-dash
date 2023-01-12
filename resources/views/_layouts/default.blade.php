@@ -2,33 +2,12 @@
 <html lang="en">
 
 <head>
-    @include('admin/includes.head')
+    @include('_includes.head')
 </head>
 <!--end::Head-->
 <!--begin::Body-->
 
 <body id="kt_body" class="header-extended header-fixed header-tablet-and-mobile-fixed">
-    <!--begin::Theme mode setup on page load-->
-    <script>
-        var defaultThemeMode = "light";
-        var themeMode;
-        if (document.documentElement) {
-            if (document.documentElement.hasAttribute("data-theme-mode")) {
-                themeMode = document.documentElement.getAttribute("data-theme-mode");
-            } else {
-                if (localStorage.getItem("data-theme") !== null) {
-                    themeMode = localStorage.getItem("data-theme");
-                } else {
-                    themeMode = defaultThemeMode;
-                }
-            }
-            if (themeMode === "system") {
-                themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-            }
-            document.documentElement.setAttribute("data-theme", themeMode);
-        }
-    </script>
-    <!--end::Theme mode setup on page load-->
     <!--begin::Main-->
     <!--begin::Root-->
     <div class="d-flex flex-column flex-root">
@@ -38,9 +17,9 @@
             <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
                 <!--begin::Header-->
                 <div id="kt_header" class="header">
-                    @include('admin/includes.header-top')
+                    @include('_includes.header-top')
 
-                    @include('admin/includes.header-navs')
+                    @include('_includes.header-navs')
                 </div>
                 <!--end::Header-->
 
@@ -49,7 +28,7 @@
 
                 <!--begin::Footer-->
                 <div class="footer py-4 d-flex flex-lg-column" id="kt_footer">
-                    @include('admin/includes.footer')
+                    @include('_includes.footer')
                 </div>
                 <!--end::Footer-->
             </div>
@@ -60,7 +39,7 @@
     <!--end::Root-->
     <!--begin::Scrolltop-->
     <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
-        @include('admin/includes.scroll-top')
+        @include('_includes.scroll-top')
     </div>
     <!--end::Scrolltop-->
     <!--begin::Javascript-->
