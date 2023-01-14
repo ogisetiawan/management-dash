@@ -5,7 +5,7 @@
     <!--begin::Heading-->
     <div class="text-center mb-5">
         <!--begin::Title-->
-        <h1 class="text-dark fw-bolder mb-5 text-uppercase text-start">Management Dashboard</h1>
+        <h1 class="text-dark fw-bolder mb-5 text-uppercase text-start text-gray-700">Management Dashboard</h1>
         <!--end::Title-->
         <!--begin::Subtitle-->
         <div class="text-gray-500 fw-semibold fs-6 text-uppercase text-start">Login to view Dashboard</div>
@@ -46,5 +46,5 @@
     <!--end::Submit button-->
 </form>
 <!--end::Form-->
+<script src="{{ asset('public/assets/js/custom/authentication/sign-in/general.js') }}"></script>
 @endsection
-<!-- <script src="{{ asset('public/assets/js/custom/authentication/sign-in/general.js') }}"></script> -->

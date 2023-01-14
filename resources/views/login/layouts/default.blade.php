@@ -22,12 +22,5 @@
             </div>
         </div>
     </div>
-    <script src="{{ asset('public/assets/plugins/global/plugins.bundle.js') }}"></script>
-    <script src="{{ asset('public/assets/js/scripts.bundle.js') }}"></script>
-    
-    <!-- <script src="{{ asset('public/assets/js/custom/authentication/sign-in/general.js') }}"></script>
-    <script src="{{ asset('public/dist/assets/js/custom/authentication/reset-password/new-password.js') }}"></script>
-    <script src="{{ asset('public/assets/js/custom/authentication/sign-in/i18n.js') }}"></script> -->
 </body>
-
 </html>

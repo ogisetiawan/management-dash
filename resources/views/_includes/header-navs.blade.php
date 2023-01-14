@@ -11,6 +11,7 @@
                 <div class="tab-pane fade active show" id="kt_header_navs_tab_1">
                     <!--begin::Menu wrapper-->
                     <div class="header-menu flex-column align-items-stretch flex-lg-row">
+                        <!-- //@ Admin -->
                         <!--begin::Menu-->
                         <div class="menu menu-rounded menu-column menu-lg-row menu-root-here-bg-desktop menu-active-bg menu-title-gray-700 menu-state-primary menu-arrow-gray-400 fw-semibold align-items-stretch flex-grow-1 px-2 px-lg-0" id="#kt_header_menu" data-kt-menu="true">
                             <!--begin::Menu item-->
@@ -62,6 +63,7 @@
                             </div>
                         </div>
                         <!--end::Menu-->
+
                     </div>
                     <!--end::Menu wrapper-->
                 </div>
