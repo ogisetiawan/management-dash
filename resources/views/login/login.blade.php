@@ -5,7 +5,7 @@
     <!--begin::Heading-->
     <div class="text-center mb-5">
         <!--begin::Title-->
-        <h1 class="text-dark fw-bolder mb-5 text-uppercase text-start text-gray-700">Management Dashboard</h1>
+        <h1 class="text-gray-700 fw-bolder mb-5 text-uppercase text-start">Management Dashboard</h1>
         <!--end::Title-->
         <!--begin::Subtitle-->
         <div class="text-gray-500 fw-semibold fs-6 text-uppercase text-start">Login to view Dashboard</div>
@@ -13,15 +13,17 @@
     </div>
     <!--begin::Heading-->
     <!--begin::Input group=-->
-    <div class="fv-row mb-8">
+    <div class="form-floating fv-row mb-5">
         <!--begin::Email-->
-        <input type="text" placeholder="Email" name="email" autocomplete="off" class="form-control bg-transparent" />
+        <input type="text" placeholder="Email" name="email" autocomplete="off" class="form-control bg-transparent" id="floatingEmail" />
+        <label for="floatingEmail" class="text-gray-500"><span class="bi bi-envelope me-2"></span>Email</label>
         <!--end::Email-->
     </div>
     <!--end::Input group=-->
-    <div class="fv-row mb-3">
+    <div class="form-floating fv-row mb-5">
         <!--begin::Password-->
-        <input type="password" placeholder="Password" name="password" autocomplete="off" class="form-control bg-transparent" />
+        <input type="password" placeholder="Password" name="password" autocomplete="off" class="form-control bg-transparent" id="floatingPassword"/>
+        <label for="floatingPassword" class="text-gray-500"><span class="bi bi-lock me-2"></span>Password</label>
         <!--end::Password-->
     </div>
     <!--end::Input group=-->
@@ -36,7 +38,7 @@
     <!--begin::Submit button-->
     <div class="d-grid mb-10">
         <button type="submit" id="kt_sign_in_submit" class="btn btn-primary">
-            <span class="indicator-label">LOGIN <i class="fa fa-arrow-right-to-bracket fs-3"></i></span>
+            <span class="indicator-label">Login</i></span>
             <span class="indicator-progress">Please wait...
                 <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
             </span>
