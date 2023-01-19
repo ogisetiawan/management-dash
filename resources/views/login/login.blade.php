@@ -48,5 +48,5 @@
     <!--end::Submit button-->
 </form>
 <!--end::Form-->
-<script src="{{ asset('public/assets/js/custom/authentication/sign-in/general.js') }}"></script>
+<script src="{{ asset('/assets/js/custom/authentication/sign-in/general.js') }}"></script>
 @endsection

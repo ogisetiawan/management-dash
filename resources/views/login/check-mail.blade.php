@@ -14,7 +14,7 @@
 
     <div class="d-flex align-items-center mb-5">
         <div class="flex-shrink-0 ">
-            <lottie-player style="height: 125px; width: 125px;" src="{{ url('public/assets/media/svg/mail-lottie.json') }}" background="transparent" speed="1" loop autoplay></lottie-player>
+            <lottie-player style="height: 125px; width: 125px;" src="{{ url('/assets/media/svg/mail-lottie.json') }}" background="transparent" speed="1" loop autoplay></lottie-player>
         </div>
         <div class="flex-grow-1 ms-3">
             <div class="text-gray-500 fw-semibold fs-6 text-uppercase text-start mb-3">Check your mail</div>

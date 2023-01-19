@@ -64,5 +64,5 @@
     <!--end::Actions-->
 </form>
 <!--end::Form-->
-<script src="{{ asset('public/assets/js/custom/authentication/reset-password/new-password.js') }}"></script>
+<script src="{{ asset('/assets/js/custom/authentication/reset-password/new-password.js') }}"></script>
 @endsection
