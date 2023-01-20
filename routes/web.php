@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Admin\MasterController;
+use App\Http\Controllers\Admin\MasterData\CountryController;
+use App\Http\Controllers\Admin\UserManagement\UsersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,19 @@ use App\Http\Controllers\Admin\MasterController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+//@ Login
+Route::get('/', [LoginController::class, 'loginForm']);
+Route::get('/password/reset', [LoginController::class, 'resetPasswordForm']);
+Route::get('/password/new', [LoginController::class, 'newPasswordForm']);
+Route::get('/check/mail', [LoginController::class, 'checkMail']);
+
+//@ Admin
+Route::get('admin/master_data/country', [CountryController::class, 'index']);
+Route::resource('admin/user_management/users', UsersController::class);
+
+
+
 
 // @ ARTISAN ROUTE
 Route::get('optimize', function () {
@@ -39,12 +53,3 @@ Route::get('config-cache', function () {
     Artisan::call('config:cache');
     return '<h1>Config cache cleared</h1>';
 });
-
-//@ Login
-Route::get('/', [LoginController::class, 'loginForm']);
-Route::get('/password/reset', [LoginController::class, 'resetPasswordForm']);
-Route::get('/password/new', [LoginController::class, 'newPasswordForm']);
-Route::get('/check/mail', [LoginController::class, 'checkMail']);
-
-//@ Admin
-Route::get('/admin', [MasterController::class, 'index']);

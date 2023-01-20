@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\UserManagement;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class MasterController extends Controller
+class UsersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class MasterController extends Controller
     public function index()
     {
         //
-        return view('master_data/country');
+        return view('user_management/users');
     }
 
     /**
