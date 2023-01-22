@@ -15,19 +15,6 @@ use App\Http\Controllers\Admin\UserManagement\UsersController;
 |
 */
 
-//@ Login
-Route::get('/', [LoginController::class, 'loginForm']);
-Route::get('/password/reset', [LoginController::class, 'resetPasswordForm']);
-Route::get('/password/new', [LoginController::class, 'newPasswordForm']);
-Route::get('/check/mail', [LoginController::class, 'checkMail']);
-
-//@ Admin
-Route::get('admin/master_data/country', [CountryController::class, 'index']);
-Route::resource('admin/user_management/users', UsersController::class);
-
-
-
-
 // @ ARTISAN ROUTE
 Route::get('optimize', function () {
     Artisan::call('optimize');
@@ -53,3 +40,14 @@ Route::get('config-cache', function () {
     Artisan::call('config:cache');
     return '<h1>Config cache cleared</h1>';
 });
+
+//@ Login
+Route::get('/', [LoginController::class, 'loginForm']);
+Route::get('/password/reset', [LoginController::class, 'resetPasswordForm']);
+Route::get('/password/new', [LoginController::class, 'newPasswordForm']);
+Route::get('/check/mail', [LoginController::class, 'checkMail']);
+
+//@ Admin
+Route::get('admin/master_data/country', [CountryController::class, 'index']);
+Route::get('admin/user_management/users/get', [UsersController::class, 'create']);
+Route::resource('admin/user_management/users', UsersController::class);

@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin\UserManagement;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use DataTables;
+use App\Models\Admin\User;
 
 class UsersController extends Controller
 {
@@ -26,6 +28,7 @@ class UsersController extends Controller
     public function create()
     {
         //
+        return Datatables::of(User::query())->make(true);
     }
 
     /**
