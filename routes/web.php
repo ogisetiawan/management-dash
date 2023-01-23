@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\MasterData\CountryController;
+use App\Http\Controllers\Admin\MasterData\CompanyController;
 use App\Http\Controllers\Admin\UserManagement\UsersController;
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +49,11 @@ Route::get('/password/new', [LoginController::class, 'newPasswordForm']);
 Route::get('/check/mail', [LoginController::class, 'checkMail']);
 
 //@ Admin
+Route::get('admin/master_data/country/get', [CountryController::class, 'create']);
 Route::get('admin/master_data/country', [CountryController::class, 'index']);
+
+Route::get('admin/master_data/company/get', [CompanyController::class, 'create']);
+Route::get('admin/master_data/company', [CompanyController::class, 'index']);
+
 Route::get('admin/user_management/users/get', [UsersController::class, 'create']);
 Route::resource('admin/user_management/users', UsersController::class);
