@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin\MasterData;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use DataTables;
+use App\Models\Admin\Country;
 
 class CountryController extends Controller
 {
@@ -25,6 +27,7 @@ class CountryController extends Controller
      */
     public function create()
     {
+        return Datatables::of(Country::query())->make(true);
         //
     }
 
