@@ -42,13 +42,16 @@ Route::get('config-cache', function () {
     return '<h1>Config cache cleared</h1>';
 });
 
-//@ Login
-Route::get('/', [LoginController::class, 'loginForm']);
-Route::get('/password/reset', [LoginController::class, 'resetPasswordForm']);
-Route::get('/password/new', [LoginController::class, 'newPasswordForm']);
-Route::get('/check/mail', [LoginController::class, 'checkMail']);
+//@ authManual
+Route::get('/', [LoginController::class, 'showLoginForm']);
+Route::post('/validate', [LoginController::class, 'validateLogin']);
+Route::get('/logout', [LoginController::class, 'logout']);
 
-//@ Admin
+Route::get('/password/reset', [LoginController::class, 'showResetForm']);
+Route::get('/password/new', [LoginController::class, 'showNewPasswordForm']);
+Route::get('/password/mail', [LoginController::class, 'showMailForm']);
+
+//@ admin
 Route::get('admin/master_data/country/get', [CountryController::class, 'create']);
 Route::get('admin/master_data/country', [CountryController::class, 'index']);
 

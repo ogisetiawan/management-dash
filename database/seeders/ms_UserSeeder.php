@@ -23,9 +23,11 @@ class ms_UserSeeder extends Seeder
         for ($i=1; $i < 5; $i++) { 
             DB::table('ms_User')->insert([
                 'chUsername' => $faker->name,
-                'chPassword' => Str::random(5),
+                // 'chPassword' => Str::random(5),
+                'chPassword' => bcrypt('test123'), // <---- check this,
+                // 'chPassword' => 'admin', // <---- check this,
                 // 'chPassword' => Hash::make('password'),
-                'chEmail' => Str::random(10).'@mail.com',
+                'chEmail' => 'test@mail.com',
                 'chFirstName' => $faker->name(),
                 'chMiddleName' => Str::random(5),
                 'chLastName' => $faker->lastName(),

@@ -83,6 +83,7 @@
 </div>
 <!--end::Container-->
 
+<!-- //@ Modal -->
 <div class="modal bg-white fade" tabindex="-1" id="kt_modal_2">
     <div class="modal-dialog modal-fullscreen">
         <div class="modal-content shadow-none">
@@ -252,17 +253,11 @@
 
 
 <script src="{{ asset('/assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
-<!-- <script src="{{ asset('/assets/js/custom/apps/user-management/users/list/table.js') }}"></script> -->
-<!-- <script src="{{ asset('/assets/js/custom/apps/user-management/users/list/export-users.js') }}"></script> -->
-<!-- <script src="{{ asset('/assets/js/custom/apps/user-management/users/list/add.js') }}"></script> -->
-
 <script>
     "use strict";
-
     const KTDatatablesServerSide = function() {
         let table;
         let dt;
-        let filterPayment;
 
         const initDatatable = function() {
             dt = $("#kt_table_users").DataTable({
@@ -270,15 +265,14 @@
                 processing: true,
                 serverSide: true,
                 order: [
-                    [5, 'desc']
+                    [0, 'desc']
                 ],
-                // stateSave: true,
                 ajax: '{{ url('admin/user_management/users/get') }}',
                 columns: [{
                         data: 'id_User',
                         render: function(data, type, row) {
                             return `
-                            <span class="text-muted fw-bold">#${data}</span>
+                                <span class="text-muted fw-bold">#${data}</span>
                             `;
                         }
                     },
@@ -295,7 +289,7 @@
                                 </div>
                                 <div class="d-flex flex-column">
                                     <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#kt_modal_2" class="text-dark fw-bold text-hover-primary fs-6 mb-1">${data}</a>
-                                    <span class="text-muted">${row.chEmail}</span>
+                                    <span>${row.chEmail}</span>
                                 </div>
                                 `;
                         }
@@ -304,7 +298,7 @@
                         data: 'chEmail',
                     },
                     {
-                        data: 'chCountry',
+                        data: 'id_Country',
                         render: function(data, type, row) {
                             return `
                             <div class="order-2 order-md-1">
@@ -348,7 +342,7 @@
                     },
                 ],
                 columnDefs: [{
-                        targets: [0, 4, 6],
+                        targets: [4, 6],
                         orderable: false,
                         searchable: false,
                     },
@@ -361,16 +355,11 @@
 
             table = dt.$;
 
-            // Re-init functions on every table re-draw -- more info: https://datatables.net/reference/event/draw
             dt.on('draw', function() {
-                // initToggleToolbar();
-                // toggleToolbars();
-                // handleDeleteRows();
                 KTMenu.createInstances();
             });
         }
 
-        // Search Datatable --- official docs reference: https://datatables.net/reference/api/search()
         const handleSearchDatatable = function() {
             const filterSearch = document.querySelector('[data-kt-user-table-filter="search"]');
             filterSearch.addEventListener('keyup', function(e) {
@@ -382,17 +371,12 @@
             init: function() {
                 initDatatable();
                 handleSearchDatatable();
-                // initToggleToolbar();
-                // handleFilterDatatable();
-                // handleDeleteRows();
-                // handleResetForm();
             }
         }
     }();
-    // On document ready
+
     KTUtil.onDOMContentLoaded(function() {
         KTDatatablesServerSide.init();
-        // datatables();
     });
 </script>
 @endsection

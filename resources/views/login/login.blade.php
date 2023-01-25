@@ -1,7 +1,18 @@
 @extends('login/layouts.default')
 @section('content')
+
+@if(session('success'))
+    <p class="alert alert-success">{{ session('success') }}</p>
+@endif
+@if($errors->any())
+@foreach($errors->all() as $err)
+    <p class="alert alert-danger">{{ $err }}</p>
+@endforeach
+@endif
+
 <!--begin::Form-->
-<form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" data-kt-redirect-url="../../demo20/dist/index.html" action="#">
+<form class="form w-100" method="POST" action="{{ url('validate') }}">
+    @csrf
     <!--begin::Heading-->
     <div class="text-center mb-5">
         <!--begin::Title-->
@@ -22,7 +33,7 @@
     <!--end::Input group=-->
     <div class="form-floating fv-row mb-5">
         <!--begin::Password-->
-        <input type="password" placeholder="Password" name="password" autocomplete="off" class="form-control bg-transparent" id="floatingPassword"/>
+        <input type="password" placeholder="Password" name="password" autocomplete="off" class="form-control bg-transparent" id="floatingPassword" />
         <label for="floatingPassword" class="text-gray-500"><span class="bi bi-lock me-2"></span>Password</label>
         <!--end::Password-->
     </div>
