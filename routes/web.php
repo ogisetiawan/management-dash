@@ -42,7 +42,7 @@ Route::get('config-cache', function () {
     return '<h1>Config cache cleared</h1>';
 });
 
-//@ authManual
+//@ authManually
 Route::get('/', [LoginController::class, 'showLoginForm']);
 Route::post('/validate', [LoginController::class, 'validateLogin']);
 Route::get('/logout', [LoginController::class, 'logout']);
