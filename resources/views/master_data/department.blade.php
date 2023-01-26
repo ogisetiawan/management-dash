@@ -78,8 +78,7 @@
     <div class="modal-dialog modal-fullscreen">
         <div class="modal-content shadow-none">
             <div class="modal-header">
-                <h1 class="text-muted fw-bold">Add new division</h1>
-
+                <h1 class="text-muted fw-bold">Add new department</h1>
                 <!--begin::Close-->
                 <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
                     <span class="bi bi-x-lg"></span>
@@ -122,7 +121,9 @@
                         data: 'chDepartmentName',
                         render: function(data, type, row) {
                             return ` 
-                                <span class="text-dark fw-bold text-hover-primary fs-6">${data}</span>
+                                <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#kt_modal_2" class="order-2 order-md-1">
+                                    <span class="text-dark fw-bold text-hover-primary fs-6">${data}</span>
+                                </a>
                             `;
                         }
                     },

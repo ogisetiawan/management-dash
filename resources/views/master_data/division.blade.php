@@ -122,7 +122,9 @@
                         data: 'chDivisionName',
                         render: function(data, type, row) {
                             return ` 
-                                <span class="text-dark fw-bold text-hover-primary fs-6">${data}</span>
+                                <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#kt_modal_2" class="order-2 order-md-1">
+                                    <span class="text-dark fw-bold text-hover-primary fs-6">${data}</span>
+                                </a>
                             `;
                         }
                     },
