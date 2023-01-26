@@ -22,7 +22,7 @@
                             </svg>
                         </span>
                         <!--end::Svg Icon-->
-                        <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid w-250px ps-14" placeholder="Search division" />
+                        <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid w-250px ps-14" placeholder="Search department" />
                     </div>
                     <!--end::Search-->
                 </div>
@@ -38,7 +38,7 @@
                                 <rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="currentColor"></rect>
                             </svg>
                         </span>
-                        Add new division</a>
+                        Add new department</a>
                     <!--end::Toolbar-->
                 </div>
                 <!--end::Card toolbar-->
@@ -54,7 +54,7 @@
                         <tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0">
                             <th class="min-w-100px">Division Code</th>
                             <th class="min-w-150px">Division Name</th>
-                            <th class="min-w-100px">Group</th>
+                            <th class="min-w-100px">Ref Code</th>
                             <th class="text-end min-w-100px"></th>
                         </tr>
                         <!--end::Table row-->
@@ -108,10 +108,10 @@
                 order: [
                     [1, 'desc']
                 ],
-                ajax: '{{ url('admin/master_data/division/get') }}',
+                ajax: '{{ url('admin/master_data/department/get') }}',
                 columns: [
                     {
-                        data: 'chDivisionCode',
+                        data: 'chDepartmentCode',
                         render: function(data, type, row) {
                             return `
                                 <span class="text-muted fw-bold">${data}</span>
@@ -119,7 +119,7 @@
                         }
                     },
                     {
-                        data: 'chDivisionName',
+                        data: 'chDepartmentName',
                         render: function(data, type, row) {
                             return ` 
                                 <span class="text-dark fw-bold text-hover-primary fs-6">${data}</span>
