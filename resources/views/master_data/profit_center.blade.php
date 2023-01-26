@@ -22,7 +22,7 @@
                             </svg>
                         </span>
                         <!--end::Svg Icon-->
-                        <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid w-250px ps-14" placeholder="Search department" />
+                        <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid w-250px ps-14" placeholder="Search profit center" />
                     </div>
                     <!--end::Search-->
                 </div>
@@ -38,7 +38,7 @@
                                 <rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="currentColor"></rect>
                             </svg>
                         </span>
-                        Add new department</a>
+                        Add new profit center</a>
                     <!--end::Toolbar-->
                 </div>
                 <!--end::Card toolbar-->
@@ -52,9 +52,11 @@
                     <thead>
                         <!--begin::Table row-->
                         <tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0">
-                            <th class="min-w-100px">Department Code</th>
-                            <th class="min-w-150px">Department Name</th>
-                            <th class="min-w-100px">Ref Code</th>
+                            <th class="min-w-100px">Profit Code</th>
+                            <th class="min-w-100px">KOKRS</th>
+                            <th class="min-w-50px">Short Desc. </th>
+                            <th class="min-w-100px">Long Desc. </th>
+                            <th class="min-w-100px">MCTXT</th>
                             <th class="text-end min-w-100px"></th>
                         </tr>
                         <!--end::Table row-->
@@ -78,7 +80,8 @@
     <div class="modal-dialog modal-fullscreen">
         <div class="modal-content shadow-none">
             <div class="modal-header">
-                <h1 class="text-muted fw-bold">Add new department</h1>
+                <h1 class="text-muted fw-bold">Add new profit center</h1>
+
                 <!--begin::Close-->
                 <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
                     <span class="bi bi-x-lg"></span>
@@ -107,10 +110,10 @@
                 order: [
                     [1, 'desc']
                 ],
-                ajax: '{{ url('admin/master_data/department/get') }}',
+                ajax: '{{ url('admin/master_data/profit_center/get') }}',
                 columns: [
                     {
-                        data: 'chDepartmentCode',
+                        data: 'chProfitCtrCode',
                         render: function(data, type, row) {
                             return `
                                 <span class="text-muted fw-bold">${data}</span>
@@ -118,7 +121,7 @@
                         }
                     },
                     {
-                        data: 'chDepartmentName',
+                        data: 'chProfitCtrCode',
                         render: function(data, type, row) {
                             return ` 
                                 <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#kt_modal_2" class="order-2 order-md-1">
@@ -128,7 +131,25 @@
                         }
                     },
                     {
-                        data: 'chRefCode',
+                        data: 'chShortDesc',
+                        render: function(data, type, row) {
+                            return `
+                                <div class="badge badge-light">${data}</div>
+                            `;
+                        }
+                    },
+                    {
+                        data: 'chLongDesc',
+                        render: function(data, type, row) {
+                            return ` 
+                                <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#kt_modal_2" class="order-2 order-md-1">
+                                    <span class="text-dark fw-bold text-hover-primary fs-6">${data}</span>
+                                </a>
+                            `;
+                        }
+                    },
+                    {
+                        data: 'chProfitCtrCode',
                         render: function(data, type, row) {
                             return `
                                 <div class="badge badge-light">${data}</div>
@@ -152,7 +173,7 @@
                 ],
                 columnDefs: [
                     {
-                        targets: [3],
+                        targets: [5],
                         orderable: false,
                         searchable: false,
                     },

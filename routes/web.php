@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\MasterData\CountryController;
 use App\Http\Controllers\Admin\MasterData\CompanyController;
 use App\Http\Controllers\Admin\MasterData\DepartmentController;
 use App\Http\Controllers\Admin\MasterData\DivisionController;
+use App\Http\Controllers\Admin\MasterData\ProfitCenterController;
 use App\Http\Controllers\Admin\UserManagement\UsersController;
 /*
 |--------------------------------------------------------------------------
@@ -65,6 +66,9 @@ Route::get('admin/master_data/division', [DivisionController::class, 'index']);
 
 Route::get('admin/master_data/department/get', [DepartmentController::class, 'create']);
 Route::get('admin/master_data/department', [DepartmentController::class, 'index']);
+
+Route::get('admin/master_data/profit_center/get', [ProfitCenterController::class, 'create']);
+Route::get('admin/master_data/profit_center', [ProfitCenterController::class, 'index']);
 
 Route::get('admin/user_management/users/get', [UsersController::class, 'create']);
 Route::resource('admin/user_management/users', UsersController::class);
