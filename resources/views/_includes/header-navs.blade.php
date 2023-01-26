@@ -29,8 +29,8 @@
                             </div>
                             <!--end::Menu item-->
                             <!--begin::Menu item-->
-                            <div class="menu-item py-3">
-                                <a href="#" class="menu-link">
+                            <div class="menu-item py-3 menu-item py-3 {{ Request::is('admin/master_data/division') ? 'here' : '' }}">
+                                <a href="{{ url('admin/master_data/division') }}" class="menu-link">
                                     <span class="menu-title">Division</span>
                                 </a>
                             </div>

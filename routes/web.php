@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\MasterData\CountryController;
 use App\Http\Controllers\Admin\MasterData\CompanyController;
+use App\Http\Controllers\Admin\MasterData\DivisionController;
 use App\Http\Controllers\Admin\UserManagement\UsersController;
 /*
 |--------------------------------------------------------------------------
@@ -57,6 +58,9 @@ Route::get('admin/master_data/country', [CountryController::class, 'index']);
 
 Route::get('admin/master_data/company/get', [CompanyController::class, 'create']);
 Route::get('admin/master_data/company', [CompanyController::class, 'index']);
+
+Route::get('admin/master_data/division/get', [DivisionController::class, 'create']);
+Route::get('admin/master_data/division', [DivisionController::class, 'index']);
 
 Route::get('admin/user_management/users/get', [UsersController::class, 'create']);
 Route::resource('admin/user_management/users', UsersController::class);
