@@ -8,22 +8,22 @@
             <div class="tab-content" data-kt-scroll="true" data-kt-scroll-activate="{default: true, lg: false}" data-kt-scroll-height="auto" data-kt-scroll-offset="70px">
                 <!-- //@ Master Data -->
                 <!--begin::Tab panel-->
-                <div class="tab-pane fade active show" id="kt_header_navs_tab_1">
+                <div class="tab-pane fade {{ Request::segment(2) == 'master_data'  ? 'active show' : '' }}" id="kt_header_navs_tab_1">
                     <!--begin::Menu wrapper-->
                     <div class="header-menu flex-column align-items-stretch flex-lg-row">
                         <!-- //@ Admin -->
                         <!--begin::Menu-->
                         <div class="menu menu-rounded menu-column menu-lg-row menu-root-here-bg-desktop menu-active-bg menu-title-gray-700 menu-state-primary menu-arrow-gray-400 fw-semibold align-items-stretch flex-grow-1 px-2 px-lg-0" id="#kt_header_menu" data-kt-menu="true">
                             <!--begin::Menu item-->
-                            <div class="menu-item here py-3">
-                                <a href="#" class="menu-link">
+                            <div class="menu-item py-3 {{ Request::is('admin/master_data/country') ? 'here' : '' }}">
+                                <a href="{{ url('admin/master_data/country') }}" class="menu-link">
                                     <span class="menu-title">Country</span>
                                 </a>
                             </div>
                             <!--end::Menu item-->
                             <!--begin::Menu item-->
-                            <div class="menu-item py-3">
-                                <a href="#" class="menu-link">
+                            <div class="menu-item py-3 {{ Request::is('admin/master_data/company') ? 'here' : '' }}">
+                                <a href="{{ url('admin/master_data/company') }}" class="menu-link">
                                     <span class="menu-title">Company</span>
                                 </a>
                             </div>
@@ -70,7 +70,7 @@
                 <!--end::Tab panel-->
                 <!-- //@ User Management -->
                 <!--begin::Tab panel-->
-                <div class="tab-pane fade" id="kt_header_navs_tab_2">
+                <div class="tab-pane fade {{ Request::segment(2) == 'user_management'  ? 'active show' : '' }}" id="kt_header_navs_tab_2">
                     <!--begin::Menu wrapper-->
                     <div class="header-menu flex-column align-items-stretch flex-lg-row">
                         <!--begin::Menu-->
@@ -83,8 +83,8 @@
                             </div>
                             <!--end::Menu item-->
                             <!--begin::Menu item-->
-                            <div class="menu-item py-3">
-                                <a href="#" class="menu-link">
+                            <div class="menu-item py-3 {{ Request::is('admin/user_management/users') ? 'here' : '' }}">
+                                <a href="{{ url('admin/user_management/users') }}" class="menu-link">
                                     <span class="menu-title">Users</span>
                                 </a>
                             </div>
@@ -97,7 +97,7 @@
                 <!--end::Tab panel-->
                 <!-- //@ Menu Management -->
                 <!--begin::Tab panel-->
-                <div class="tab-pane fade" id="kt_header_navs_tab_3">
+                <div class="tab-pane fade {{ Request::segment(2) == 'menu_management'  ? 'active show' : '' }}" id="kt_header_navs_tab_3">
                     <!--begin::Menu wrapper-->
                     <div class="header-menu flex-column align-items-stretch flex-lg-row">
                         <!--begin::Menu-->

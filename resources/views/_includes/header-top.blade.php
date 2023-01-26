@@ -28,13 +28,13 @@
                     <!--begin::Header tabs-->
                     <ul class="nav flex-nowrap text-nowrap">
                         <li class="nav-item">
-                            <a class="nav-link active" data-bs-toggle="tab" href="#kt_header_navs_tab_1">Master Data</a>
+                            <a class="nav-link {{ Request::segment(2) == 'master_data'  ? 'active' : '' }}" data-bs-toggle="tab" href="#kt_header_navs_tab_1">Master Data</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="tab" href="#kt_header_navs_tab_2">User Management</a>
+                            <a class="nav-link {{ Request::segment(2) == 'user_management'  ? 'active' : '' }}" data-bs-toggle="tab" href="#kt_header_navs_tab_2">User Management</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="tab" href="#kt_header_navs_tab_3">Menu Management</a>
+                            <a class="nav-link {{ Request::segment(2) == 'menu_management'  ? 'active' : '' }}" data-bs-toggle="tab" href="#kt_header_navs_tab_3">Menu Management</a>
                         </li>
                     </ul>
                     <!--begin::Header tabs-->
