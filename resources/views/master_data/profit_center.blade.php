@@ -52,11 +52,11 @@
                     <thead>
                         <!--begin::Table row-->
                         <tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0">
-                            <th class="min-w-100px">Profit Code</th>
-                            <th class="min-w-100px">KOKRS</th>
-                            <th class="min-w-50px">Short Desc. </th>
-                            <th class="min-w-100px">Long Desc. </th>
-                            <th class="min-w-100px">MCTXT</th>
+                            <th class="min-w-50px">Profit Center</th>
+                            <th class="min-w-50px">Name</th>
+                            <th class="min-w-100px">Description</th>
+                            <th class="min-w-50px">Ref. Code</th>
+                            <th class="min-w-50px">Company</th>
                             <th class="text-end min-w-100px"></th>
                         </tr>
                         <!--end::Table row-->
@@ -121,20 +121,12 @@
                         }
                     },
                     {
-                        data: 'chProfitCtrCode',
+                        data: 'chShortDesc',
                         render: function(data, type, row) {
                             return ` 
                                 <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#kt_modal_2" class="order-2 order-md-1">
                                     <span class="text-dark fw-bold text-hover-primary fs-6">${data}</span>
                                 </a>
-                            `;
-                        }
-                    },
-                    {
-                        data: 'chShortDesc',
-                        render: function(data, type, row) {
-                            return `
-                                <div class="badge badge-light">${data}</div>
                             `;
                         }
                     },
@@ -149,7 +141,15 @@
                         }
                     },
                     {
-                        data: 'chProfitCtrCode',
+                        data: 'chRefCode',
+                        render: function(data, type, row) {
+                            return `
+                                <div class="badge badge-light">${data}</div>
+                            `;
+                        }
+                    },
+                    {
+                        data: 'id_Company',
                         render: function(data, type, row) {
                             return `
                                 <div class="badge badge-light">${data}</div>
@@ -173,7 +173,7 @@
                 ],
                 columnDefs: [
                     {
-                        targets: [5],
+                        targets: [4],
                         orderable: false,
                         searchable: false,
                     },
