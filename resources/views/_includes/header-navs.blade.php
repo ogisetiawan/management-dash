@@ -76,8 +76,8 @@
                         <!--begin::Menu-->
                         <div class="menu menu-rounded menu-column menu-lg-row menu-root-here-bg-desktop menu-active-bg menu-title-gray-700 menu-state-primary menu-arrow-gray-400 fw-semibold align-items-stretch flex-grow-1 px-2 px-lg-0" id="#kt_header_menu" data-kt-menu="true">
                             <!--begin::Menu item-->
-                            <div class="menu-item py-3">
-                                <a href="#" class="menu-link">
+                            <div class="menu-item py-3  {{ Request::is('admin/user_management/roles') ? 'here' : '' }}">
+                                <a href="{{ url('admin/user_management/roles') }}" class="menu-link">
                                     <span class="menu-title">Roles</span>
                                 </a>
                             </div>
