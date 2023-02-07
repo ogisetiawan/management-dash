@@ -56,8 +56,8 @@
                                 </a>
                             </div>
                             <!--begin::Menu item-->
-                            <div class="menu-item py-3">
-                                <a href="#" class="menu-link">
+                            <div class="menu-item py-3 {{ Request::is('admin/master_data/data_mapping') ? 'here' : '' }}">
+                                <a href="{{ url('admin/master_data/data_mapping') }}" class="menu-link">
                                     <span class="menu-title">Data Mapping</span>
                                 </a>
                             </div>

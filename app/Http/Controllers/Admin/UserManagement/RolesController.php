@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Admin\Roles;
 use Illuminate\Http\Request;
 use DataTables;
-use Illuminate\Support\Facades\DB; /// penggunaan librarty untuk query builder
+use Illuminate\Support\Facades\DB;
 
 class RolesController extends Controller
 {

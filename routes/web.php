@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\MasterData\DepartmentController;
 use App\Http\Controllers\Admin\MasterData\DivisionController;
 use App\Http\Controllers\Admin\MasterData\LocationController;
 use App\Http\Controllers\Admin\MasterData\ProfitCenterController;
+use App\Http\Controllers\Admin\MasterData\DataMappingController;
 use App\Http\Controllers\Admin\UserManagement\RolesController;
 use App\Http\Controllers\Admin\UserManagement\UsersController;
 /*
@@ -74,6 +75,9 @@ Route::get('admin/master_data/profit_center', [ProfitCenterController::class, 'i
 
 Route::get('admin/master_data/location/get', [LocationController::class, 'create']);
 Route::get('admin/master_data/location', [LocationController::class, 'index']);
+
+Route::get('admin/master_data/data_mapping/get', [DataMappingController::class, 'create']);
+Route::get('admin/master_data/data_mapping', [DataMappingController::class, 'index']);
 
 Route::get('admin/user_management/roles/get', [RolesController::class, 'create']);
 Route::resource('admin/user_management/roles', RolesController::class);
