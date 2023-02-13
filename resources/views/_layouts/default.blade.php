@@ -6,8 +6,11 @@
 </head>
 <!--end::Head-->
 <!--begin::Body-->
-
-<body id="kt_body" class="header-extended header-fixed header-tablet-and-mobile-fixed"> untuk header-extended
+@if(Auth::user()->chUserType === '1')
+<body id="kt_body" class="header-extended header-fixed header-tablet-and-mobile-fixed">
+@elseif(Auth::user()->chUserType === '3')
+<body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed">
+@endif
     <!--begin::Main-->
     <!--begin::Root-->
     <div class="d-flex flex-column flex-root">
@@ -18,8 +21,9 @@
                 <!--begin::Header-->
                 <div id="kt_header" class="header">
                     @include('_includes.header-top')
-
-                    @include('_includes.header-navs')
+                    @if(Auth::user()->chUserType === '1')
+                        @include('_includes.header-navs')
+                    @endif
                 </div>
                 <!--end::Header-->
 

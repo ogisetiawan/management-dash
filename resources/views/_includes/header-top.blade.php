@@ -25,6 +25,7 @@
             <div class="align-self-end overflow-auto" id="kt_brand_tabs">
                 <!--begin::Header tabs wrapper-->
                 <div class="header-tabs overflow-auto mx-4 ms-lg-10 mb-5 mb-lg-0" id="kt_header_tabs" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_header_navs_wrapper', lg: '#kt_brand_tabs'}">
+                    @if(Auth::user()->chUserType === '1')
                     <!--begin::Header tabs-->
                     <ul class="nav flex-nowrap text-nowrap">
                         <li class="nav-item">
@@ -37,7 +38,30 @@
                             <a class="nav-link {{ Request::segment(2) == 'menu_management'  ? 'active' : '' }}" data-bs-toggle="tab" href="#kt_header_navs_tab_3">Menu Management</a>
                         </li>
                     </ul>
+                    @endif
                     <!--begin::Header tabs-->
+
+                    @if(Auth::user()->chUserType === '3')
+                    <!--begin::Header tabs-->
+                    <ul class="nav flex-nowrap text-nowrap">
+                        <li class="nav-item">
+                            <a class="nav-link {{ Request::segment(3) == 'summary'  ? 'active' : '' }}">Summary</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ Request::segment(3) == 'sales_analysis'  ? 'active' : '' }}">Sales Analysis</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ Request::segment(3) == 'debt_analysis'  ? 'active' : '' }}">Debt Analysis</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ Request::segment(3) == 'stock_analysis'  ? 'active' : '' }}">Stock Analysis</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ Request::segment(3) == 'financial_analysis'  ? 'active' : '' }}">Financial Analysis</a>
+                        </li>
+                    </ul>
+                    <!--begin::Header tabs-->
+                    @endif
                 </div>
                 <!--end::Header tabs wrapper-->
             </div>
@@ -902,8 +926,8 @@
                 <div class="btn btn-flex align-items-center bg-hover-white bg-hover-opacity-10 py-2 px-2 px-md-3" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
                     <!--begin::Name-->
                     <div class="d-none d-md-flex flex-column align-items-end justify-content-center me-2 me-md-4">
-                        <span class="text-white opacity-75 fs-8 fw-semibold lh-1 mb-1">Admin Portal</span>
-                        <span class="text-white fs-8 fw-bold lh-1">Administrator</span>
+                        <span class="text-white opacity-75 fs-8 fw-semibold lh-1 mb-1">{{ Auth::user()->chFirstName }} {{ Auth::user()->chLastName }}</span>
+                        <span class="text-white fs-8 fw-bold lh-1">{{ Auth::user()->chUserType }}</span>
                     </div>
                     <!--end::Name-->
                     <!--begin::Symbol-->
@@ -925,10 +949,10 @@
                             <!--end::Avatar-->
                             <!--begin::Username-->
                             <div class="d-flex flex-column">
-                                <div class="fw-bold d-flex align-items-center fs-5">Admin Portal
-                                    <span class="badge badge-light-success fw-bold fs-8 px-2 py-1 ms-2">Administrator</span>
+                                <div class="fw-bold d-flex align-items-center fs-5">{{ Auth::user()->chFirstName }} {{ Auth::user()->chLastName }} 
+                                    <span class="badge badge-light-success fw-bold fs-8 px-2 py-1 ms-2">{{ Auth::user()->chUserType }}</span>
                                 </div>
-                                <a href="#" class="fw-semibold text-muted text-hover-primary fs-7">admin@mail.com</a>
+                                <a href="#" class="fw-semibold text-muted text-hover-primary fs-7">{{ Auth::user()->chEmail }}</a>
                             </div>
                             <!--end::Username-->
                         </div>
@@ -1000,13 +1024,10 @@
                     </div>
                     <!--end::Menu item-->
                     <!--begin::Menu item-->
-                    <div class="menu-item px-5 my-1">
-                        <a href="../../demo20/dist/account/settings.html" class="menu-link px-5">Account Settings</a>
-                    </div>
                     <!--end::Menu item-->
                     <!--begin::Menu item-->
                     <div class="menu-item px-5">
-                        <a href="../../demo20/dist/authentication/layouts/corporate/sign-in.html" class="menu-link px-5">Sign Out</a>
+                        <a href="{{ url('logout') }}" class="menu-link px-5">Logout</a>
                     </div>
                     <!--end::Menu item-->
                 </div>

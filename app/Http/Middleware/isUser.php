@@ -17,9 +17,11 @@ class isUser
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::user()->chUserType === '3'){
-            return $next($request);
+        if (Auth::check()) {
+            if (Auth::user()->chUserType === '3') {
+                return $next($request);
+            }
         }
-        return redirect()->back();
+        return redirect()->back()->withErrors('Please login first!');
     }
 }
