@@ -6,7 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use DataTables;
 use App\Models\Admin\Country;
-
+use Session;
+use Illuminate\Support\Facades\Auth;
 class CountryController extends Controller
 {
     /**
@@ -16,6 +17,7 @@ class CountryController extends Controller
      */
     public function index()
     {
+        // dd(Auth::user()->chUsername); //get auth
         // return view('master_data/test');
         return view('master_data/country');
     }

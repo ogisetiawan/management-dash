@@ -33,7 +33,7 @@ class ms_UserSeeder extends Seeder
                 'chLastName' => $faker->lastName(),
                 // 'vbAvatar' => $faker->imageUrl(360, 360, 'animals', true),
                 'loActive' => $faker->randomDigitNotNull,
-                'AIDX' => Str::random(3),
+                'chUserType' => 1,
             ]);
         }
     }

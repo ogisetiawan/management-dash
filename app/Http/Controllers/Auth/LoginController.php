@@ -11,49 +11,58 @@ use App\Models\User;
 
 class LoginController extends Controller
 {
-    public function showLoginForm(){
+    public function showLoginForm()
+    {
         return view('login/login');
     }
 
-    public function validateLogin(Request $request){
+    public function validateLogin(Request $request)
+    {
 
         $this->validate($request, [
-            'email' => ['required', 'email'], 
+            'email' => ['required', 'email'],
             'password' => 'required',
         ]);
-        
+
         $credential = array(
             'chEmail'  => $request->get('email'),
             'chPassword' => $request->get('password')
         );
- 
+
         if (Auth::attempt($credential)) {
             $request->session()->regenerate();
+            if(Auth::user()->chUserType === '3'){
+                return redirect()->intended('user/dashboard/summary');
+            }
             return redirect()->intended('admin/master_data/country');
         }
- 
+
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ])->onlyInput('email');
     }
 
-    public function logout(Request $request){
+    public function logout(Request $request)
+    {
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-   
+
         return redirect('/');
     }
 
-    public function showResetForm(){
+    public function showResetForm()
+    {
         return view('login/reset-password');
     }
 
-    public function showMailForm(){
+    public function showMailForm()
+    {
         return view('login/check-mail');
     }
 
-    public function showNewPasswordForm(){
+    public function showNewPasswordForm()
+    {
         return view('login/new-password');
     }
 }

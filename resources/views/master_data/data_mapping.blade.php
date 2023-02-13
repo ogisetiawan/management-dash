@@ -22,7 +22,7 @@
                             </svg>
                         </span>
                         <!--end::Svg Icon-->
-                        <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid w-250px ps-14" placeholder="Search location" />
+                        <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid w-250px ps-14" placeholder="Search data mapping" />
                     </div>
                     <!--end::Search-->
                 </div>
@@ -38,7 +38,7 @@
                                 <rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="currentColor"></rect>
                             </svg>
                         </span>
-                        Add new location</a>
+                        Add new data mapping</a>
                     <!--end::Toolbar-->
                 </div>
                 <!--end::Card toolbar-->
