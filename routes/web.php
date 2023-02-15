@@ -46,14 +46,14 @@ Route::get('config-cache', function () {
     return '<h1>Config cache cleared</h1>';
 });
 
-// @ AUTHENTICATION 
-Route::get('/', [LoginController::class, 'showLoginForm']);
+// @ AUTHENTICATION
+Route::get('/   ', [LoginController::class, 'showLoginForm'])->middleware('guest');
 Route::post('/validate', [LoginController::class, 'validateLogin']);
 Route::get('/logout', [LoginController::class, 'logout']);
 
-Route::get('/password/reset', [LoginController::class, 'showResetForm']);
-Route::get('/password/new', [LoginController::class, 'showNewPasswordForm']);
-Route::get('/password/mail', [LoginController::class, 'showMailForm']);
+Route::get('/password/reset', [LoginController::class, 'showResetForm'])->middleware('guest');;
+Route::get('/password/new', [LoginController::class, 'showNewPasswordForm'])->middleware('guest');;
+Route::get('/password/mail', [LoginController::class, 'showMailForm'])->middleware('guest');;
 
 //@ ADMIN AND MASTER DATA
 Route::middleware(['isSuperAdmin'])->group(function () {

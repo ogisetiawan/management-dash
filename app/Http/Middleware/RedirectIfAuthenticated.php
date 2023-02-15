@@ -19,14 +19,14 @@ class RedirectIfAuthenticated
      */
     public function handle(Request $request, Closure $next, ...$guards)
     {
-        $guards = empty($guards) ? [null] : $guards;
-
-        foreach ($guards as $guard) {
-            if (Auth::guard($guard)->check()) {
-                return redirect(RouteServiceProvider::HOME);
+        //? redirect if has logged in
+        if (Auth::check()) {
+            if (Auth::user()->chUserType === '1' || Auth::user()->chUserType === '2' ) {
+                return redirect('/admin/master_data/country');
             }
+            return redirect('/user/dashboard/summary');
         }
-
+    
         return $next($request);
     }
 }
