@@ -1,0 +1,44 @@
+@charset "UTF-8";
+:root {
+    --blue1: #06357a;
+    --blue2: #0a68c7;
+    --blue3: #0d6efd;
+    --orange1: #ffb900;
+    --orange2: #ff7700;
+}
+
+/* @ FONTS */
+@font-face {
+    font-family: "Avenir LT 35";
+    src: url("../fonts/AvenirLT-Light.woff2") format("woff2"),
+        url("../fonts/AvenirLT-Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: "Avenir LT 35";
+    font-weight: inherit;
+    font-style: inherit;
+}
+
+/* @MENU */
+.menu-state-primary
+    .menu-item.hover:not(.here)
+    > .menu-link:not(.disabled):not(.active):not(.here),
+.menu-state-primary
+    .menu-item:not(.here)
+    .menu-link:hover:not(.disabled):not(.active):not(.here) {
+    font-weight: bold;
+}
+
+.header .header-tabs .nav-link:hover {
+    color: var(--kt-white);
+    cursor: pointer;
+}
+
+/* @ COLOR */
+.text-custom-blue3{
+    color: var(--blue3) !important;
+}
