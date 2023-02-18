@@ -18,7 +18,7 @@ class isSuperAdmin
     public function handle(Request $request, Closure $next)
     {
         if(Auth::check()){
-            if(Auth::user()->chUserType === '1' || Auth::user()->chUserType === '2'){
+            if(Auth::user()->chUserType === 'Super Admin' || Auth::user()->chUserType === 'Admin'){
                 return $next($request);
             }
         }

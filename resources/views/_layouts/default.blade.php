@@ -6,9 +6,9 @@
 </head>
 <!--end::Head-->
 <!--begin::Body-->
-@if(Auth::user()->chUserType === '1')
+@if(Auth::user()->chUserType === 'Super Admin')
 <body id="kt_body" class="header-extended header-fixed header-tablet-and-mobile-fixed">
-@elseif(Auth::user()->chUserType === '3')
+@elseif(Auth::user()->chUserType === 'User')
 <body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed">
 @endif
     <!--begin::Main-->
@@ -21,7 +21,7 @@
                 <!--begin::Header-->
                 <div id="kt_header" class="header">
                     @include('_includes.header-top')
-                    @if(Auth::user()->chUserType === '1')
+                    @if(Auth::user()->chUserType === 'Super Admin')
                         @include('_includes.header-navs')
                     @endif
                 </div>

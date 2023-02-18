@@ -20,21 +20,21 @@ class ms_UserSeeder extends Seeder
     {
         //
         $faker = Faker::create('id_ID'); //? initial data menggunakan fake indonesia
-        for ($i=1; $i < 5; $i++) { 
+        // for ($i=1; $i < 5; $i++) { 
             DB::table('ms_User')->insert([
                 'chUsername' => $faker->name,
                 // 'chPassword' => Str::random(5),
                 'chPassword' => bcrypt('test123'), // <---- check this,
                 // 'chPassword' => 'admin', // <---- check this,
                 // 'chPassword' => Hash::make('password'),
-                'chEmail' => 'test@mail.com',
+                'chEmail' => 'kewalin@behnmeyer.com',
                 'chFirstName' => $faker->name(),
                 'chMiddleName' => Str::random(5),
                 'chLastName' => $faker->lastName(),
                 // 'vbAvatar' => $faker->imageUrl(360, 360, 'animals', true),
                 'loActive' => $faker->randomDigitNotNull,
-                'chUserType' => 1,
+                'chUserType' => 3,
             ]);
-        }
+        // }
     }
 }

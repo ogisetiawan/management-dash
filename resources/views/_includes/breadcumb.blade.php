@@ -25,7 +25,7 @@
         </div>
         <!--end::Page title-->
         <!-- //@ AUTH:USER -->
-        @if(Auth::user()->chUserType === '3')
+        @if(Auth::user()->chUserType === 'User')
         <div class="d-flex align-items-center gap-3 mt-4">
             <select class="form-select form-select-sm" data-control="select2" data-placeholder="Select saved filter">
                 <option></option>

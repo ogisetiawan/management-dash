@@ -18,7 +18,7 @@ class isUser
     public function handle(Request $request, Closure $next)
     {
         if (Auth::check()) {
-            if (Auth::user()->chUserType === '3') {
+            if (Auth::user()->chUserType === 'User') {
                 return $next($request);
             }
         }
