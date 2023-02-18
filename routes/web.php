@@ -47,7 +47,7 @@ Route::get('config-cache', function () {
 });
 
 // @ AUTHENTICATION
-Route::get('/   ', [LoginController::class, 'showLoginForm'])->middleware('guest');
+Route::get('/', [LoginController::class, 'showLoginForm'])->middleware('guest');
 Route::post('/validate', [LoginController::class, 'validateLogin']);
 Route::get('/logout', [LoginController::class, 'logout']);
 
