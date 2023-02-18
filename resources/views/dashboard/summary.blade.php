@@ -1,8 +1,5 @@
 @extends('_layouts.default')
 @section('content')
-<style>
-
-</style>
 <div id="kt_content_container" class="d-flex flex-column-fluid align-items-start container-xxl">
     <div class="content flex-row-fluid" id="kt_content">
         <!-- //@ Filter -->
@@ -13,65 +10,121 @@
                         <div class="col">
                             <label class="form-label text-muted fw-bold fs-8">CH/AG</label>
                             <select class="form-select form-select-sm form-select-solid" data-control="select2" data-placeholder="Select an CH/AG">
+                                @isset($companyTypes)
+                                @foreach($companyTypes as $companyType)
                                 <option></option>
-                                <option value="1">Option 1</option>
-                                <option value="2">Option 2</option>
+                                <option value="{{ $companyType->id_Type }}">{{ $companyType->chTypeName }}</option>
+                                @endforeach
+                                @endisset
+
+                                @empty($companyTypes)
+                                <option></option>
+                                @endempty
                             </select>
                         </div>
                         <div class="col">
                             <label class="form-label text-muted fw-bold fs-8">BUSINESS UNIT</label>
                             <select class="form-select form-select-sm form-select-solid" data-control="select2" data-placeholder="Select an Business Unit">
+                                @isset($BUs)
+                                @foreach($BUs as $BU)
                                 <option></option>
-                                <option value="1">Option 1</option>
-                                <option value="2">Option 2</option>
+                                <option value="{{ $BU->id_Division }}">{{ $BU->chDivisionName }}</option>
+                                @endforeach
+                                @endisset
+
+                                @empty($BUs)
+                                <option></option>
+                                @endempty
                             </select>
                         </div>
                         <div class="col">
                             <label class="form-label text-muted fw-bold fs-8">DEPARTMENT</label>
                             <select class="form-select form-select-sm form-select-solid" data-control="select2" data-placeholder="Select an Department">
+                                @isset($departments)
+                                @foreach($departments as $deparement)
                                 <option></option>
-                                <option value="1">Option 1</option>
-                                <option value="2">Option 2</option>
+                                <option value="{{ $deparement->id_Department }}">{{ $deparement->chDepartmentName }}</option>
+                                @endforeach
+                                @endisset
+
+                                @empty($departments)
+                                <option></option>
+                                @endempty
                             </select>
                         </div>
                         <div class="col">
                             <label class="form-label text-muted fw-bold fs-8">PRODUCT GROUP</label>
                             <select class="form-select form-select-sm form-select-solid" data-control="select2" data-placeholder="Select an Product Group">
+                                @isset($product_groups)
+                                @foreach($product_groups as $product_group)
                                 <option></option>
-                                <option value="1">Option 1</option>
-                                <option value="2">Option 2</option>
+                                <option value="{{ $product_group->id_Hierarchy }}">{{ $product_group->chDescription }}</option>
+                                @endforeach
+                                @endisset
+
+                                @empty($product_groups)
+                                <option></option>
+                                @endempty
                             </select>
                         </div>
                         <div class="col">
                             <label class="form-label text-muted fw-bold fs-8">PRODUCT</label>
                             <select class="form-select form-select-sm form-select-solid" data-control="select2" data-placeholder="Select an Product">
+                                @isset($products)
+                                @foreach($products as $products)
                                 <option></option>
-                                <option value="1">Option 1</option>
-                                <option value="2">Option 2</option>
+                                <option value="{{ $products->id_Hierarchy }}">{{ $products->chDescription }}</option>
+                                @endforeach
+                                @endisset
+
+                                @empty($products)
+                                <option></option>
+                                @endempty
                             </select>
                         </div>
                         <div class="col">
                             <label class="form-label text-muted fw-bold fs-8">COUNTRY</label>
                             <select class="form-select form-select-sm form-select-solid" data-control="select2" data-placeholder="Select an Country">
+                                @isset($countries)
+                                @foreach($countries as $country)
                                 <option></option>
-                                <option value="1">Option 1</option>
-                                <option value="2">Option 2</option>
+                                <option value="{{ $country->id_Country }}">{{ $country->chCountryName }}</option>
+                                @endforeach
+                                @endisset
+
+                                @empty($countries)
+                                <option></option>
+                                @endempty
                             </select>
                         </div>
                         <div class="col">
                             <label class="form-label text-muted fw-bold fs-8">COMPANY</label>
                             <select class="form-select form-select-sm form-select-solid" data-control="select2" data-placeholder="Select an Company">
+                                @isset($companies)
+                                @foreach($companies as $company)
                                 <option></option>
-                                <option value="1">Option 1</option>
-                                <option value="2">Option 2</option>
+                                <option value="{{ $company->id_Company }}">{{ $company->chCompanyName }}</option>
+                                @endforeach
+                                @endisset
+
+                                @empty($companies)
+                                <option></option>
+                                @endempty
                             </select>
                         </div>
                         <div class="col">
                             <label class="form-label text-muted fw-bold fs-8">LOCATION</label>
                             <select class="form-select form-select-sm form-select-solid" data-control="select2" data-placeholder="Select an Location">
+                                @isset($locations)
+                                @foreach($locations as $location)
                                 <option></option>
-                                <option value="1">Option 1</option>
-                                <option value="2">Option 2</option>
+                                <option value="{{ $location->id_Location }}">{{ $location->chLocationName }}</option>
+                                @endforeach
+                                @endisset
+
+                                @empty($locations)
+                                <option></option>
+                                @endempty
                             </select>
                         </div>
                     </div>

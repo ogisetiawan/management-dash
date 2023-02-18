@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use App\Models\Dashboard\Summary;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SummaryController extends Controller
 {
@@ -15,8 +16,24 @@ class SummaryController extends Controller
      */
     public function index()
     {
-        //
-        return view('dashboard/summary');
+        $companyTypes = DB::table('ms_CompanyType')->get();
+        $departments = DB::table('ms_Department')->get();
+        $BUs = DB::table('ms_Division')->get();
+        $countries = DB::table('ms_Country')->get();
+        $companies = DB::table('ms_Company')->get();
+        $locations = DB::table('ms_Location')->get();
+        $product_groups = DB::table('ms_Hierarchy')->where(DB::raw('LEN(chProdHierarchy)'), '=', 5)->get();
+        $products = DB::table('ms_Hierarchy')->where(DB::raw('LEN(chProdHierarchy)'), '=', 10)->get();
+        
+        return view('dashboard.summary')
+            ->with(compact('companyTypes'))
+            ->with(compact('departments'))
+            ->with(compact('BUs'))
+            ->with(compact('countries'))
+            ->with(compact('product_groups'))
+            ->with(compact('products'))
+            ->with(compact('companies'))
+            ->with(compact('locations'));
     }
 
     /**
