@@ -87,5 +87,6 @@ Route::middleware(['isSuperAdmin'])->group(function () {
 
 // @ DASHBOARD
 Route::middleware(['isUser'])->group(function () {
+    Route::post('user/dashboard/summary/filter', [SummaryController::class, 'filter']);
     Route::resource('user/dashboard/summary', SummaryController::class);
 });

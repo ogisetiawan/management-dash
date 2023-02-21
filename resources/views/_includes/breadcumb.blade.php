@@ -35,11 +35,11 @@
             <a href="javascript:void(0)" target="_blank" class="btn btn-sm btn-icon" style="margin-left:-10px">
                 <i class="bi bi-three-dots-vertical"></i>
             </a>
-            <select class="form-select form-select-sm" data-control="select2" data-placeholder="Currency">
+            <select class="form-select form-select-sm" data-control="select2" data-placeholder="Currency" id="currency">
                 <option></option>
-                <option value="1">EUR</option>
-                <option value="2">USD</option>
-                <option value="3">IDR</option>
+                <option value="eur" selected>EUR</option>
+                <option value="usd">USD</option>
+                <option value="idr">IDR</option>
             </select>
             <div class="form-check form-check-custom form-check-sm ms-3">
                 <input class="form-check-input" type="radio" value="" id="currencyFormat" name="currency" checked />
